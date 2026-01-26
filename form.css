@@ -15,7 +15,7 @@ body {
   min-height: 100vh;
   font-family: Arial, sans-serif;
 
-  background-image: url("./img/clg-Picsart-AiImageEnhancer.png"); /* your image */
+  background-image: url("clg-Picsart-AiImageEnhancer.png"); /* your image */
   background-size: cover;        /* full screen cover */
   background-position: center;   /* center align */
   background-repeat: no-repeat;  /* repeat band */
@@ -225,4 +225,5 @@ input[type="radio"] {
   h2 {
     font-size: 16px;
   }
+
 }
