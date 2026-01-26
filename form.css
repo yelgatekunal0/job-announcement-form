@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+
+  background-image: url("./img/clg-Picsart-AiImageEnhancer.png"); /* your image */
+  background-size: cover;        /* full screen cover */
+  background-position: center;   /* center align */
+  background-repeat: no-repeat;  /* repeat band */
+  background-attachment: fixed;  /* scroll smooth */
+}
+
+
+
+.container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 0;
+  border: 1px solid #ccc;
+}
+
+/* Header Section with Logos */
+.header-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+  border-bottom: 2px solid #333;
+  gap: 20px;
+}
+
+.logo-left,
+.logo-right {
+  flex-shrink: 0;
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-left img,
+.logo-right img {
+  width: 120px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.header-text {
+  flex: 1;
+  text-align: center;
+}
+
+.institute-name {
+  color: #333;
+  font-size: 13px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+h1 {
+  color: #333;
+  font-size: 24px;
+  margin: 10px 0 5px 0;
+  font-weight: bold;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Form Content Padding */
+form {
+  padding: 0 30px 30px 30px;
+}
+
+/* Section Headers */
+h2 {
+  color: #333;
+  font-size: 18px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+h3 {
+  color: #555;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* Labels */
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 14px;
+}
+
+.required::after {
+  content: ' *';
+  color: red;
+}
+
+/* Input Fields */
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #999;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #0066cc;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+select {
+  cursor: pointer;
+}
+
+/* Field Groups */
+.field-group {
+  margin-bottom: 15px;
+}
+
+.row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.row .field-group {
+  flex: 1;
+}
+
+/* Checkbox and Radio Groups */
+.checkbox-group,
+.radio-group {
+  margin: 10px 0;
+}
+
+.checkbox-group label,
+.radio-group label {
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: auto;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.submit-btn:hover {
+  background-color: #0052a3;
+}
+
+/* Utility */
+.hidden {
+  display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+}
