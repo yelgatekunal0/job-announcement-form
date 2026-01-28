@@ -1,65 +1,91 @@
-* {
+:root {
+  /* Color Palette (Slate & Blue) */
+  --primary: #2563eb;
+  /* Blue 600 */
+  --primary-hover: #1d4ed8;
+  /* Blue 700 */
+  --primary-light: #eff6ff;
+  /* Blue 50 */
+
+  --bg-page: #f8fafc;
+  /* Slate 50 */
+  --bg-card: #ffffff;
+
+  --text-main: #0f172a;
+  /* Slate 900 */
+  --text-secondary: #475569;
+  /* Slate 600 */
+  --text-muted: #94a3b8;
+  /* Slate 400 */
+
+  --border: #cbd5e1;
+  /* Slate 300 */
+  --border-focus: #2563eb;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  --radius: 0.75rem;
+  /* 12px */
+  --radius-sm: 0.375rem;
+  /* 6px */
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  padding: 20px;
-}
-
-body {
-  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.6;
   min-height: 100vh;
-  font-family: Arial, sans-serif;
-
-  background-image: url("assest/clg-Picsart-AiImageEnhancer.png"); /* your image */
-  background-size: cover;        /* full screen cover */
-  background-position: center;   /* center align */
-  background-repeat: no-repeat;  /* repeat band */
-  background-attachment: fixed;  /* scroll smooth */
+  padding: 2rem 1rem;
 }
-
-
 
 .container {
-  background-color: white;
-  padding: 30px;
-  border-radius: 8px;
   max-width: 900px;
   margin: 0 auto;
-  background-color: white;
-  padding: 0;
-  border: 1px solid #ccc;
+  background-color: var(--bg-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
 }
 
-/* Header Section with Logos */
 .header-section {
+  background: linear-gradient(to right, #ffffff, #f1f5f9);
+  padding: 2rem;
+  border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 20px 30px;
-  border-bottom: 2px solid #333;
-  gap: 20px;
+  gap: 1.5rem;
 }
 
 .logo-left,
 .logo-right {
   flex-shrink: 0;
-  background-color: #f8f9fa;
-  padding: 15px;
-  border-radius: 8px;
-  border: 2px solid #e0e0e0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: white;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo-left img,
 .logo-right img {
-  width: 120px;
-  height: auto;
-  display: block;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
 }
 
@@ -69,163 +95,330 @@ body {
 }
 
 .institute-name {
-  color: #333;
-  font-size: 13px;
-  margin-bottom: 10px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
   font-weight: 500;
-  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
 }
 
 h1 {
-  color: #333;
-  font-size: 24px;
-  margin: 10px 0 5px 0;
-  font-weight: bold;
+  font-size: 1.75rem;
+  color: var(--text-main);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.025em;
 }
 
 .subtitle {
-  color: #666;
-  font-size: 14px;
-  margin-top: 5px;
+  font-size: 1rem;
+  color: var(--primary);
+  font-weight: 600;
 }
 
-/* Form Content Padding */
+/* =========================================
+   4. FORM LAYOUT & TYPOGRAPHY
+   ========================================= */
 form {
-  padding: 0 30px 30px 30px;
+  padding: 2.5rem;
 }
 
-/* Section Headers */
 h2 {
-  color: #333;
-  font-size: 18px;
-  margin-top: 25px;
-  margin-bottom: 15px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 5px;
+  font-size: 1.25rem;
+  color: var(--text-main);
+  font-weight: 600;
+  padding-bottom: 0.75rem;
+  margin: 2.5rem 0 1.5rem 0;
+  border-bottom: 2px solid var(--primary-light);
+  display: flex;
+  align-items: center;
+}
+
+h2:first-of-type {
+  margin-top: 0;
 }
 
 h3 {
-  color: #555;
-  font-size: 16px;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin: 1.5rem 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-/* Labels */
+/* =========================================
+   5. INPUTS & FIELDS
+   ========================================= */
+.field-group {
+  margin-bottom: 1.25rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Label Styling */
 label {
   display: block;
-  margin-bottom: 5px;
-  color: #333;
-  font-size: 14px;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  font-weight: 500;
+  margin-bottom: 0.4rem;
 }
 
 .required::after {
-  content: ' *';
-  color: red;
+  content: " *";
+  color: #ef4444;
+  /* Red 500 */
 }
 
-/* Input Fields */
-input,
+/* Input Styling */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="url"],
 textarea,
 select {
   width: 100%;
-  padding: 8px;
-  border: 1px solid #999;
-  font-size: 14px;
-  font-family: Arial, sans-serif;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  font-family: var(--font-sans);
+  color: var(--text-main);
+  background-color: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: all 0.1s ease;
 }
 
 input:focus,
 textarea:focus,
 select:focus {
   outline: none;
-  border-color: #0066cc;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  /* Ring effect */
 }
 
 textarea {
+  min-height: 120px;
   resize: vertical;
-  min-height: 80px;
 }
 
-select {
+/* File Input Sytling */
+input[type="file"] {
+  padding: 0.5rem;
+  background-color: var(--bg-page);
   cursor: pointer;
 }
 
-/* Field Groups */
-.field-group {
-  margin-bottom: 15px;
+input[type="file"]::file-selector-button {
+  margin-right: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: var(--primary);
+  color: white;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.1s;
 }
 
-.row {
+input[type="file"]::file-selector-button:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Placeholder styling */
+::placeholder {
+  color: var(--text-muted);
+}
+
+.radio-group,
+.checkbox-group {
   display: flex;
-  gap: 15px;
-  margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
-.row .field-group {
-  flex: 1;
+/* Standard Checkbox/Radio Labels (Pill Style) */
+.radio-group label,
+.checkbox-group label:not(.industry-card) {
+  /* Exclude industry cards */
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--bg-page);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  /* Pill shape */
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.1s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
 }
 
-/* Checkbox and Radio Groups */
-.checkbox-group,
-.radio-group {
-  margin: 10px 0;
+.radio-group label:hover,
+.checkbox-group label:not(.industry-card):hover {
+  background-color: #fff;
+  border-color: var(--text-muted);
 }
 
-.checkbox-group label,
-.radio-group label {
-  display: inline-block;
-  margin-right: 15px;
-  margin-bottom: 8px;
+.radio-group label:has(input:checked),
+.checkbox-group label:not(.industry-card):has(input:checked) {
+  background-color: var(--primary-light);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: var(--primary);
+  width: 1.1em;
+  height: 1.1em;
+  margin-right: 0.5rem;
   cursor: pointer;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
-  width: auto;
-  margin-right: 5px;
-  cursor: pointer;
+/* =========================================
+   7. INDUSTRY SECTOR (PREMIUM GRID)
+   ========================================= */
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-top: 0.5rem;
 }
 
-/* Submit Button */
+.industry-card {
+  display: flex !important;
+  align-items: center;
+  padding: 1rem;
+  background-color: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 500;
+  margin-bottom: 0 !important;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.industry-card:hover {
+  background-color: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.15), 0 4px 6px -2px rgba(37, 99, 235, 0.1);
+  transform: translateY(-2px);
+}
+
+.industry-card input {
+  width: 1.25em;
+  height: 1.25em;
+  margin-right: 0.75rem !important;
+}
+
+.industry-card:has(input:checked) {
+  background-color: var(--primary-light);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+}
+
+/* =========================================
+   8. BUTTONS
+   ========================================= */
 .submit-btn {
+  display: block;
   width: 100%;
-  padding: 12px;
-  background-color: #0066cc;
+  padding: 1rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
   color: white;
   border: none;
-  font-size: 16px;
+  border-radius: var(--radius);
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
-  margin-top: 20px;
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.4);
+  transition: all 0.1s ease;
+  margin-top: 2rem;
 }
 
 .submit-btn:hover {
-  background-color: #0052a3;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 10px -1px rgba(37, 99, 235, 0.5);
 }
 
-/* Utility */
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+/* =========================================
+   9. UTILITY & RESPONSIVE
+   ========================================= */
 .hidden {
   display: none !important;
 }
 
-/* Responsive */
+/* BTech/MTech lists - hide breaks for flex wrap */
+.checkbox-group br {
+  display: none;
+}
+
+/* Base Mobile Styles */
 @media (max-width: 768px) {
+  body {
+    padding: 0.5rem;
+  }
+
   .container {
-    padding: 20px;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .header-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .logo-left,
+  .logo-right {
+    margin: 0 auto;
+  }
+
+  form {
+    padding: 1.5rem;
   }
 
   .row {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Small Mobile Devices (e.g., iPhone SE) */
+@media (max-width: 480px) {
+  .header-text h1 {
+    font-size: 1.5rem;
   }
 
-  h1 {
-    font-size: 20px;
+  form {
+    padding: 1rem;
   }
 
   h2 {
-    font-size: 16px;
+    font-size: 1.1rem;
+    margin-top: 2rem;
   }
 
+  /* Stack industry options in 1 column if space is tight */
+  .industry-grid {
+    grid-template-columns: 1fr;
+  }
 }
-
-
