@@ -1,9 +1,9 @@
-// Wait until DOM is loaded
+
 document.addEventListener("DOMContentLoaded", function () {
 
   const form = document.getElementById("jobForm");
 
-  /* ========= ORG TYPE "OTHER" ========= */
+
   const orgOtherRadio = document.getElementById("orgTypeOther");
   const orgOtherInput = document.getElementById("orgOther");
   const orgTypeRadios = document.querySelectorAll("input[name='orgType']");
@@ -14,15 +14,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  /* ========= INDUSTRY "OTHER" ========= */
-  const industrySelect = document.getElementById("industry");
+  const industryOtherCheckbox = document.getElementById("industryOtherCheckbox");
   const industryOtherInput = document.getElementById("industryOther");
 
-  industrySelect.addEventListener("change", () => {
-    industryOtherInput.classList.toggle("hidden", industrySelect.value !== "Other");
+  industryOtherCheckbox.addEventListener("change", () => {
+    industryOtherInput.classList.toggle("hidden", !industryOtherCheckbox.checked);
   });
 
-  /* ========= SAME AS FIRST CONTACT ========= */
   const sameAsFirst = document.getElementById("sameAsFirst");
 
   sameAsFirst.addEventListener("change", () => {
@@ -33,7 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
       sameAsFirst.checked ? document.getElementById("contact1Email").value : "";
   });
 
-  /* ========= B.TECH ALL ========= */
   const btechAll = document.querySelector(".btechAll");
   const btechBranches = document.querySelectorAll(".btech");
 
@@ -41,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     btechBranches.forEach(cb => cb.checked = btechAll.checked);
   });
 
-  /* ========= M.TECH ALL ========= */
+
   const mtechAll = document.querySelector(".mtechAll");
   const mtechBranches = document.querySelectorAll(".mtech");
 
@@ -49,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
     mtechBranches.forEach(cb => cb.checked = mtechAll.checked);
   });
 
-  /* ========= FORM SUBMIT ========= */
+
   form.addEventListener("submit", function (e) {
     e.preventDefault(); // stop refresh
 
